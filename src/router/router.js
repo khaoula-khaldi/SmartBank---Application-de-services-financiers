@@ -11,6 +11,9 @@ export function router() {
     if(path === '/'){
         root.innerHTML =Welcome();
     }
+    if(path === '/dashbord'){
+        root.innerHTML = bonjour();
+    }
 
     if (path === '/register') {
         root.innerHTML = Register();
@@ -21,7 +24,5 @@ export function router() {
         root.innerHTML= Login();
         initLogin();
     }
-    if(path === '/dashbord'){
-        root.innerHTML = bonjour();
-    }
+
 }

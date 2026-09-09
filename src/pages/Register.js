@@ -1,12 +1,14 @@
+
 import '../styles/register.css';
 
 export function Register() {
     return `
         <div class="register-page">
             <div class="register-card">
+
                 <h1>Créer un compte</h1>
 
-                <form id="register-form">
+                <form id="register-form" novalidate>
 
                     <input
                         id="name"
@@ -15,14 +17,12 @@ export function Register() {
                     >
                     <div id="name-error"></div>
 
-
                     <input
                         id="email"
                         type="email"
                         placeholder="Email"
                     >
                     <div id="email-error"></div>
-
 
                     <input
                         id="password"
@@ -31,7 +31,6 @@ export function Register() {
                     >
                     <div id="password-error"></div>
 
-
                     <input
                         id="confirm-password"
                         type="password"
@@ -39,13 +38,17 @@ export function Register() {
                     >
                     <div id="confirm-password-error"></div>
 
-
                     <button type="submit">
                         S'inscrire
                     </button>
-                    <p> Déjà un compte ? <a href="/login">Se connecter</a> </p>
+
+                    <p>
+                        Déjà un compte ?
+                        <a href="/login">Se connecter</a>
+                    </p>
 
                 </form>
+
             </div>
         </div>
     `;
@@ -53,76 +56,86 @@ export function Register() {
 
 export function initRegister() {
     const form = document.querySelector('#register-form');
-    // console.log("good ")
 
     form.addEventListener('submit', handleRegister);
 }
-
 
 function handleRegister(event) {
     event.preventDefault();
 
     const form = document.querySelector('#register-form');
 
-    const name = form.querySelector('#name').value;
-    const email = form.querySelector('#email').value;
+    const name = form.querySelector('#name').value.trim();
+    const email = form.querySelector('#email').value.trim();
     const password = form.querySelector('#password').value;
     const confirmPassword = form.querySelector('#confirm-password').value;
-
 
     const nameError = form.querySelector('#name-error');
     const emailError = form.querySelector('#email-error');
     const passwordError = form.querySelector('#password-error');
     const confirmPasswordError = form.querySelector('#confirm-password-error');
 
+    // On efface les anciennes erreurs
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    passwordError.innerHTML = "";
+    confirmPasswordError.innerHTML = "";
+
     let isValid = true;
 
+    // Validation du nom
     if (name === "" || name.length < 5) {
         nameError.innerHTML = "Entre un vrai nom";
-        isValid=false;
+        isValid = false;
     }
 
-
+    // Validation de l'email
     if (email === "" || !email.includes("@")) {
         emailError.innerHTML = "Entre un vrai email";
-        isValid=false;
+        isValid = false;
     }
 
-
+    // Validation du mot de passe
     if (password === "" || password.length < 8) {
         passwordError.innerHTML = "Entre un mot de passe fort";
-        isValid=false;
+        isValid = false;
     }
 
-
+    // Confirmation du mot de passe
     if (confirmPassword !== password) {
-        confirmPasswordError.innerHTML = "Les mots de passe ne correspondent pas";
-        isValid=false;
+        confirmPasswordError.innerHTML =
+            "Les mots de passe ne correspondent pas";
+        isValid = false;
     }
 
-    if(isValid===true){
-        const user =
-            {
-                "name":name,
-                "email":email,
-                "password":password
-            };
-        
+    // Si tout est valide
+    if (isValid) {
+
         const users = JSON.parse(localStorage.getItem("users")) || [];
-        const existingUser  = users.find(user=>user.email===email);
-        if(existingUser){
-            emailError.innerHTML= "ce email est deja utiliser";
-            isValid=false;
-        }else{
-            users.push(user);
-            localStorage.setItem("users",JSON.stringify(users));
-            nameError.innerHTML = "";
-            emailError.innerHTML = "";
-            passwordError.innerHTML = "";
-            confirmPasswordError.innerHTML = "";
+
+        // Vérifier si l'email existe déjà
+        const existingUser = users.find(
+            user => user.email === email
+        );
+
+        if (existingUser) {
+            emailError.innerHTML = "Cet email est déjà utilisé";
+            return;
         }
 
+        // Créer le nouvel utilisateur
+        const user = {
+            name: name,
+            email: email,
+            password: password
+        };
+
+        users.push(user);
+        localStorage.setItem("users",JSON.stringify(users));
+        window.location.href = "/login";
+       
+
+        console.log("Compte créé avec succès !");
     }
-
-
 }
+
