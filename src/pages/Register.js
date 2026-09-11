@@ -1,9 +1,9 @@
-
-import '../styles/register.css';
+import "../styles/register.css";
 
 export function Register() {
     return `
         <div class="register-page">
+
             <div class="register-card">
 
                 <h1>Créer un compte</h1>
@@ -44,98 +44,154 @@ export function Register() {
 
                     <p>
                         Déjà un compte ?
-                        <a href="/login">Se connecter</a>
+                        <a href="/login" data-link>Se connecter</a>
                     </p>
 
                 </form>
 
             </div>
+
         </div>
     `;
 }
 
-export function initRegister() {
-    const form = document.querySelector('#register-form');
 
-    form.addEventListener('submit', handleRegister);
+export function initRegister() {
+
+    const form = document.querySelector("#register-form");
+
+    form.addEventListener("submit", handleRegister);
 }
 
+
 function handleRegister(event) {
+
     event.preventDefault();
 
-    const form = document.querySelector('#register-form');
+    const form = document.querySelector("#register-form");
 
-    const name = form.querySelector('#name').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const password = form.querySelector('#password').value;
-    const confirmPassword = form.querySelector('#confirm-password').value;
+    const name = form.querySelector("#name").value.trim();
+    const email = form.querySelector("#email").value.trim();
+    const password = form.querySelector("#password").value;
+    const confirmPassword =
+        form.querySelector("#confirm-password").value;
 
-    const nameError = form.querySelector('#name-error');
-    const emailError = form.querySelector('#email-error');
-    const passwordError = form.querySelector('#password-error');
-    const confirmPasswordError = form.querySelector('#confirm-password-error');
 
-    // On efface les anciennes erreurs
+    const nameError = form.querySelector("#name-error");
+    const emailError = form.querySelector("#email-error");
+    const passwordError = form.querySelector("#password-error");
+    const confirmPasswordError =
+        form.querySelector("#confirm-password-error");
+
+
+    // Effacer les anciennes erreurs
+
     nameError.innerHTML = "";
     emailError.innerHTML = "";
     passwordError.innerHTML = "";
     confirmPasswordError.innerHTML = "";
 
+
     let isValid = true;
 
+
     // Validation du nom
+
     if (name === "" || name.length < 5) {
+
         nameError.innerHTML = "Entre un vrai nom";
+
         isValid = false;
     }
+
 
     // Validation de l'email
+
     if (email === "" || !email.includes("@")) {
+
         emailError.innerHTML = "Entre un vrai email";
+
         isValid = false;
     }
+
 
     // Validation du mot de passe
+
     if (password === "" || password.length < 8) {
-        passwordError.innerHTML = "Entre un mot de passe fort";
+
+        passwordError.innerHTML =
+            "Entre un mot de passe fort";
+
         isValid = false;
     }
+
 
     // Confirmation du mot de passe
+
     if (confirmPassword !== password) {
+
         confirmPasswordError.innerHTML =
             "Les mots de passe ne correspondent pas";
+
         isValid = false;
     }
 
+
     // Si tout est valide
+
     if (isValid) {
 
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const users =
+            JSON.parse(localStorage.getItem("users")) || [];
+
 
         // Vérifier si l'email existe déjà
+
         const existingUser = users.find(
             user => user.email === email
         );
 
+
         if (existingUser) {
-            emailError.innerHTML = "Cet email est déjà utilisé";
+
+            emailError.innerHTML =
+                "Cet email est déjà utilisé";
+
             return;
         }
 
+
         // Créer le nouvel utilisateur
+
         const user = {
             name: name,
             email: email,
             password: password
         };
 
+
+        // Ajouter le user dans le tableau
+
         users.push(user);
-        localStorage.setItem("users",JSON.stringify(users));
-        window.location.href = "/login";
-       
+
+
+        // Sauvegarder dans LocalStorage
+
+        localStorage.setItem(
+            "users",
+            JSON.stringify(users)
+        );
+
+
+    
+
+        history.pushState({}, "", "/login");
+
+        window.dispatchEvent(
+            new PopStateEvent("popstate")
+        );
+
 
         console.log("Compte créé avec succès !");
     }
 }
-

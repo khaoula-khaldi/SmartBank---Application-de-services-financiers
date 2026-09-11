@@ -1,4 +1,5 @@
-import "../styles/login.css";
+
+import "../styles/Login.css";
 
 export function Login() {
     return `
@@ -27,7 +28,7 @@ export function Login() {
 
                     <p>
                         Tu n'as pas de compte ?
-                        <a href="/register">S'inscrire</a>
+                        <a href="/register" data-link>S'inscrire</a>
                     </p>
 
                 </form>
@@ -38,17 +39,17 @@ export function Login() {
 }
 
 export function initLogin() {
-
     const form = document.querySelector("#login-form");
+
+    if (!form) return;
 
     form.addEventListener("submit", handleLogin);
 }
 
 function handleLogin(event) {
-
     event.preventDefault();
 
-    const form = document.querySelector("#login-form");
+    const form = event.currentTarget;
 
     const email = form.querySelector("#email").value.trim();
     const password = form.querySelector("#password").value;
@@ -63,21 +64,25 @@ function handleLogin(event) {
             user.password === password
     );
 
-    if (user) {
-
-        const currentUser = {
-            name: user.name,
-            email: user.email
-        };
-
-        localStorage.setItem("currentUser",JSON.stringify(currentUser)
-        );
-
-        window.location.href = "/dashbord";
-
-    } else {
-
+    if (!user) {
         console.log("Email ou mot de passe incorrect");
-
+        return;
     }
+
+    const currentUser = {
+        name: user.name,
+        email: user.email
+    };
+
+    localStorage.setItem(
+        "currentUser",
+        JSON.stringify(currentUser)
+    );
+
+    // Navigation SPA sans refresh
+    history.pushState({}, "", "/dashbord");
+
+    // Informe le router que l'URL a changé
+    window.dispatchEvent(new PopStateEvent("popstate"));
 }
+

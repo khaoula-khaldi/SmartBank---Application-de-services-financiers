@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Crédit personnel",
+        "description": "Financez vos projets facilement",
+        "rate": 4.5,
+        "category": "Crédit"
+    },
+    {
+        "id": 2,
+        "title": "Offre épargne",
+        "description": "Faites fructifier votre épargne",
+        "rate": 3.2,
+        "category": "Épargne"
+    },
+    {
+        "id": 3,
+        "title": "Crédit auto",
+        "description": "Financez votre nouvelle voiture",
+        "rate": 4.1,
+        "category": "Crédit"
+    }
+]

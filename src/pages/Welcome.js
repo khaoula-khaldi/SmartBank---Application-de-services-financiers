@@ -1,3 +1,5 @@
+import "../styles/Welcome.css";
+
 export function Welcome() {
     return `
         <div class="welcome-page">
@@ -10,8 +12,8 @@ export function Welcome() {
             </p>
 
             <div>
-                <a href="/login">Se connecter</a>
-                <a href="/register">Créer un compte</a>
+                <a href="/login" data-link>Se connecter</a>
+                <a href="/register" data-link>Créer un compte</a>
             </div>
 
         </div>

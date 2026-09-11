@@ -1,0 +1,184 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.credit-page {
+    min-height: 100vh;
+    display: flex;
+    background-color: #f5f7fb;
+}
+
+/* =========================
+   CREDIT CONTENT
+========================= */
+
+.credit-page h1 {
+    margin: 35px 0 30px 35px;
+    font-size: 30px;
+    color: #111827;
+}
+
+/* =========================
+   FORM
+========================= */
+
+#credit-form {
+    width: 100%;
+    max-width: 550px;
+
+    margin: 100px auto 0;
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* =========================
+   LABEL
+========================= */
+
+#credit-form label {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+#credit-form input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    font-size: 15px;
+    color: #111827;
+
+    background-color: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+#credit-form input::placeholder {
+    color: #9ca3af;
+}
+
+#credit-form input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+#credit-form button {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #2563eb;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#credit-form button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   RESULT
+========================= */
+
+#credit-result {
+    margin-top: 10px;
+}
+
+/* SUCCESS */
+
+.credit-success {
+    padding: 15px;
+
+    background-color: #ecfdf5;
+
+    border: 1px solid #a7f3d0;
+    border-radius: 8px;
+
+    color: #047857;
+}
+
+.credit-success p {
+    font-size: 15px;
+}
+
+.credit-success strong {
+    font-size: 18px;
+}
+
+/* ERROR */
+
+.credit-error {
+    padding: 15px;
+
+    background-color: #fef2f2;
+
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+
+    color: #dc2626;
+
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .credit-page {
+        flex-direction: column;
+    }
+
+    .credit-page h1 {
+        margin: 25px 20px;
+        font-size: 25px;
+    }
+
+    #credit-form {
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        padding: 25px;
+    }
+}

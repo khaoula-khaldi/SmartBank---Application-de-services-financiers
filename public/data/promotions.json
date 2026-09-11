@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Flash Sale",
+        "description": "Profitez de 20% de réduction sur une sélection d'offres.",
+        "discount": 20,
+        "startDate": "2026-09-10",
+        "endDate": "2026-09-15",
+        "category": "Promotion"
+    },
+    {
+        "id": 2,
+        "title": "Cashback spécial",
+        "description": "Recevez 10% de cashback sur votre prochaine offre.",
+        "discount": 10,
+        "startDate": "2026-09-10",
+        "endDate": "2026-09-20",
+        "category": "Cashback"
+    },
+    {
+        "id": 3,
+        "title": "Offre rentrée",
+        "description": "Une offre spéciale pour bien démarrer la rentrée.",
+        "discount": 15,
+        "startDate": "2026-09-10",
+        "endDate": "2026-09-30",
+        "category": "Offre spéciale"
+    }
+]

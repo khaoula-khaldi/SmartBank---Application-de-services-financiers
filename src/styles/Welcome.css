@@ -1,0 +1,145 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.welcome-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background-color: #f5f7fb;
+
+    color: #1f2937;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.welcome-page h1 {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
+    color: #2563eb;
+}
+
+.welcome-page p {
+    max-width: 550px;
+
+    margin-bottom: 30px;
+
+    color: #6b7280;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.welcome-page > div {
+    display: flex;
+
+    gap: 15px;
+}
+
+.welcome-page a {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+/* Se connecter */
+
+.welcome-page a:first-child {
+    background-color: #2563eb;
+
+    color: white;
+}
+
+.welcome-page a:first-child:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* Créer un compte */
+
+.welcome-page a:last-child {
+    background-color: white;
+
+    color: #2563eb;
+
+    border: 1px solid #2563eb;
+}
+
+.welcome-page a:last-child:hover {
+    background-color: #eff6ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .welcome-page h1 {
+        font-size: 30px;
+    }
+
+    .welcome-page p {
+        font-size: 15px;
+    }
+
+    .welcome-page > div {
+        flex-direction: column;
+
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+    .welcome-page a {
+        width: 100%;
+    }
+}

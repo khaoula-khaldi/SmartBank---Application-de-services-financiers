@@ -1,7 +1,11 @@
+
 import { Register, initRegister} from '../pages/Register.js';
 import { Login ,initLogin } from '../pages/login.js';
 import { Welcome } from '../pages/Welcome.js';  
 import { bonjour } from '../pages/Dashbord.js';
+import { offres, initOffers } from "../pages/Offers.js";
+import {Credit,simuler} from "../pages/Credit.js";
+import {Promotions,initPromotions} from "../pages/Promotions.js";
 
 
 export function router() {
@@ -24,5 +28,21 @@ export function router() {
         root.innerHTML= Login();
         initLogin();
     }
+        
+    if(path === '/offers'){
+
+        root.innerHTML= offres();
+        initOffers(); 
+    }
+    if(path === '/credit'){
+        root.innerHTML = Credit();
+        simuler();
+    }
+    if(path === '/Promotions'){
+        root.innerHTML=Promotions();
+        initPromotions();
+    }
+
 
 }
+window.addEventListener("popstate", router);

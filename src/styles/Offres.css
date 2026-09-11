@@ -1,0 +1,133 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.offers-page {
+    min-height: 100vh;
+    display: flex;
+    background-color: #f5f7fb;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.offers-page .main-content {
+    flex: 1;
+    padding: 35px;
+    min-width: 0;
+}
+
+.offers-page .main-content h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #111827;
+}
+
+/* =========================
+   OFFERS CONTAINER
+========================= */
+
+#offers-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* =========================
+   OFFER CARD
+========================= */
+
+.offer-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    transition: 0.2s;
+}
+
+.offer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.offer-card h2 {
+    font-size: 20px;
+    color: #111827;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.offer-card p {
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* =========================
+   RATE
+========================= */
+
+.offer-card p:nth-of-type(2) {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.offer-card span {
+    align-self: flex-start;
+
+    padding: 6px 12px;
+
+    background-color: #eff6ff;
+    color: #2563eb;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    #offers-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .offers-page .main-content {
+        padding: 20px;
+    }
+
+    .offers-page .main-content h1 {
+        font-size: 25px;
+    }
+
+    #offers-container {
+        grid-template-columns: 1fr;
+    }
+}
