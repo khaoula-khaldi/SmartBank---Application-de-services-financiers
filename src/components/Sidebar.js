@@ -25,11 +25,11 @@ export function Sidebar() {
                     Promotions
                 </a>
 
-                <a href="/rewards" data-link>
-                    Récompenses
+                <a href="/profile" data-link>
+                    Profile
                 </a>
 
-                <a href="/history" data-link>
+                <a href="/History" data-link>
                     Historique
                 </a>
 
@@ -48,50 +48,23 @@ export function Sidebar() {
 
 
 export function initSidebar() {
+    console.log("INIT SIDEBAR");
 
-    const links = document.querySelectorAll(".sidebar-menu a");
+    const logout = document.getElementById("logout");
 
-    links.forEach(link => {
-
-        link.addEventListener("click", (event) => {
-
-            // Empêche le comportement normal du <a>
-            // donc pas de refresh
-            event.preventDefault();
-
-            // Récupérer l'URL
-            const path = link.getAttribute("href");
-
-            // Changer l'URL sans recharger la page
-            history.pushState({}, "", path);
-
-            // Demander au router de charger la nouvelle page
-            window.dispatchEvent(
-                new PopStateEvent("popstate")
-            );
-        });
-
-    });
-
-
-    // Logout
-    const logoutButton = document.querySelector("#logout");
-
-    if (logoutButton) {
-
-        logoutButton.addEventListener("click", () => {
-
-            localStorage.removeItem("currentUser");
-
-            history.pushState({}, "", "/login");
-
-            window.dispatchEvent(
-                new PopStateEvent("popstate")
-            );
-
-        });
-
+    if (!logout) {
+        return;
     }
+console.log(" khrej mn if ! logout ");
 
+    logout.addEventListener("click", () => {
+        console.log("dkhal l'event ");
+
+
+        localStorage.removeItem("currentUser");
+
+        history.pushState({}, "", "/login");
+
+        window.dispatchEvent(new PopStateEvent("popstate"));
+    });
 }
-

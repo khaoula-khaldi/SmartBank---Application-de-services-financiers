@@ -6,7 +6,10 @@ import { bonjour } from '../pages/Dashbord.js';
 import { offres, initOffers } from "../pages/Offers.js";
 import {Credit,simuler} from "../pages/Credit.js";
 import {Promotions,initPromotions} from "../pages/Promotions.js";
+import {History , initHistory} from "../pages/History.js";
+import { Profile , initProfile } from '../pages/profile.js';
 
+import { Sidebar, initSidebar } from "../components/Sidebar.js";
 
 export function router() {
     const path = window.location.pathname;
@@ -17,6 +20,8 @@ export function router() {
     }
     if(path === '/dashbord'){
         root.innerHTML = bonjour();
+        initSidebar();
+
     }
 
     if (path === '/register') {
@@ -32,17 +37,36 @@ export function router() {
     if(path === '/offers'){
 
         root.innerHTML= offres();
-        initOffers(); 
+        initOffers();
+        initSidebar();
+ 
     }
     if(path === '/credit'){
         root.innerHTML = Credit();
         simuler();
+        initSidebar();
+
     }
     if(path === '/Promotions'){
         root.innerHTML=Promotions();
         initPromotions();
+        initSidebar();
+
+    }
+    
+    if(path === '/History'){
+        root.innerHTML=History();
+        initHistory();
+        initSidebar();
+
     }
 
+    if(path === '/profile'){
+        root.innerHTML=Profile();
+        initProfile();
+        initSidebar();
+    }
+    
 
 }
 window.addEventListener("popstate", router);

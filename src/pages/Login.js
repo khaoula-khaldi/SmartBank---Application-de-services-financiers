@@ -79,10 +79,8 @@ function handleLogin(event) {
         JSON.stringify(currentUser)
     );
 
-    // Navigation SPA sans refresh
     history.pushState({}, "", "/dashbord");
 
-    // Informe le router que l'URL a changé
     window.dispatchEvent(new PopStateEvent("popstate"));
 }
 
