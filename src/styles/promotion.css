@@ -1,162 +1,82 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .promotions-page {
     min-height: 100vh;
-
     display: flex;
-    flex-direction: row;
-
-    background-color: #f5f7fb;
+    background-color: #f5f8fc;
 }
-
-/* =========================
-   SIDEBAR
-========================= */
-
-.promotions-page .sidebar {
-    width: 240px;
-    min-width: 240px;
-    height: 100vh;
-
-    flex-shrink: 0;
-}
-
-/* =========================
-   CONTENT
-========================= */
 
 .promotions-content {
     flex: 1;
-    min-width: 0;
-
-    padding: 35px;
+    padding: 30px;
 }
-
-/* =========================
-   TITLE
-========================= */
 
 .promotions-content h1 {
-    margin-bottom: 30px;
+    margin: 0 0 25px;
 
-    font-size: 30px;
-    color: #111827;
+    color: #172033;
+    font-size: 28px;
 }
 
-/* =========================
-   CONTAINER
-========================= */
+
+/* Promotions */
 
 #promotions-container {
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
-
-/* =========================
-   CARD
-========================= */
 
 .promotion-card {
-    background-color: #ffffff;
+    padding: 20px;
 
-    padding: 25px;
+    background-color: white;
 
     border: 1px solid #e5e7eb;
-    border-radius: 14px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    transition: 0.2s;
+    border-radius: 8px;
 }
-
-.promotion-card:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* =========================
-   CARD TITLE
-========================= */
 
 .promotion-card h2 {
-    font-size: 20px;
-    color: #111827;
+    margin: 0 0 12px;
+
+    color: #2563eb;
+    font-size: 19px;
 }
 
-/* =========================
-   TEXT
-========================= */
-
 .promotion-card p {
-    color: #6b7280;
+    margin: 10px 0;
 
-    font-size: 15px;
-
+    color: #667085;
+    font-size: 14px;
     line-height: 1.5;
 }
 
-/* =========================
-   DISCOUNT
-========================= */
-
 .promotion-card strong {
     color: #2563eb;
-    font-size: 18px;
 }
 
-/* =========================
-   DATE
-========================= */
 
-.promotion-card p:last-child {
-    color: #9ca3af;
-    font-size: 13px;
+/* Empty / loading message */
+
+#promotions-container > p {
+    padding: 20px;
+
+    background-color: white;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    color: #667085;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
-@media (max-width: 1000px) {
-
-    #promotions-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* Responsive */
 
 @media (max-width: 700px) {
 
-    .promotions-page {
-        flex-direction: column;
-    }
-
-    .promotions-page .sidebar {
-        width: 100%;
-        min-width: 100%;
-        height: auto;
+    #promotions-container {
+        grid-template-columns: 1fr;
     }
 
     .promotions-content {
         padding: 20px;
-    }
-
-    .promotions-content h1 {
-        font-size: 25px;
-    }
-
-    #promotions-container {
-        grid-template-columns: 1fr;
     }
 }

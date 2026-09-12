@@ -71,9 +71,6 @@ export function bonjour() {
                                     <p>
                                         Financez vos projets facilement.
                                     </p>
-                                    <button>
-                                        Voir l'offre
-                                    </button>
                                 </div>
 
                                 <div class="card">
@@ -81,9 +78,7 @@ export function bonjour() {
                                     <p>
                                         Faites fructifier votre épargne.
                                     </p>
-                                    <button>
-                                        Voir l'offre
-                                    </button>
+
                                 </div>
 
                             </div>
@@ -103,10 +98,6 @@ export function bonjour() {
                                         Profitez de notre offre limitée.
                                     </p>
                                 </div>
-
-                                <button>
-                                    Voir l'offre
-                                </button>
 
                             </div>
 

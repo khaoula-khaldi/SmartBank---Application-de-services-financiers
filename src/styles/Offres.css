@@ -1,133 +1,63 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .offers-page {
     min-height: 100vh;
     display: flex;
-    background-color: #f5f7fb;
+    background-color: #f5f8fc;
 }
 
-/* =========================
-   CONTENT
-========================= */
-
-.offers-page .main-content {
+.main-content {
     flex: 1;
-    padding: 35px;
-    min-width: 0;
+    padding: 30px;
 }
 
-.offers-page .main-content h1 {
-    margin-bottom: 30px;
-    font-size: 30px;
-    color: #111827;
+.main-content h1 {
+    margin: 0 0 25px;
+    color: #172033;
+    font-size: 28px;
 }
 
-/* =========================
-   OFFERS CONTAINER
-========================= */
+
 
 #offers-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
-
-/* =========================
-   OFFER CARD
-========================= */
 
 .offer-card {
-    background-color: #ffffff;
-    padding: 25px;
+    padding: 20px;
+
+    background-color: white;
+
     border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    transition: 0.2s;
+    border-radius: 8px;
 }
-
-.offer-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* =========================
-   TITLE
-========================= */
 
 .offer-card h2 {
-    font-size: 20px;
-    color: #111827;
+    margin: 0 0 10px;
+
+    color: #2563eb;
+    font-size: 19px;
 }
 
-/* =========================
-   DESCRIPTION
-========================= */
-
 .offer-card p {
-    color: #6b7280;
-    font-size: 15px;
+    margin: 8px 0;
+
+    color: #667085;
+    font-size: 14px;
     line-height: 1.5;
 }
 
-/* =========================
-   RATE
-========================= */
 
-.offer-card p:nth-of-type(2) {
-    color: #2563eb;
-    font-weight: 600;
-}
 
-/* =========================
-   CATEGORY
-========================= */
+/* Responsive */
 
-.offer-card span {
-    align-self: flex-start;
-
-    padding: 6px 12px;
-
-    background-color: #eff6ff;
-    color: #2563eb;
-
-    border-radius: 20px;
-
-    font-size: 13px;
-    font-weight: 600;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1000px) {
-
-    #offers-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 650px) {
-
-    .offers-page .main-content {
-        padding: 20px;
-    }
-
-    .offers-page .main-content h1 {
-        font-size: 25px;
-    }
+@media (max-width: 700px) {
 
     #offers-container {
         grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 20px;
     }
 }

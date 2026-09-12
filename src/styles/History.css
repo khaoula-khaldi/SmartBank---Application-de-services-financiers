@@ -1,0 +1,33 @@
+.history-page {
+    min-height: 100vh;
+    display: flex;
+    background-color: #f5f8fc;
+}
+
+.history-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.history-content h1 {
+    margin: 0 0 25px;
+
+    color: #172033;
+    font-size: 28px;
+}
+
+#page {
+    max-width: 900px;
+}
+
+#page p {
+    margin: 0 0 12px;
+    padding: 15px 20px;
+
+    background-color: white;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+
+    color: #475467;
+}

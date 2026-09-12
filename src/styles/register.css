@@ -1,217 +1,70 @@
 
-/* =========================
-   RESET
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-/* =========================
-   REGISTER PAGE
-========================= */
-
 .register-page {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 30px;
-
-    background-color: #f5f7fb;
+    background-color: #f5f7fa;
+    padding: 20px;
 }
-
-
-/* =========================
-   REGISTER CARD
-========================= */
 
 .register-card {
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
 
-    background-color: #ffffff;
+    padding: 30px;
 
-    padding: 35px;
+    background-color: white;
+    border-radius: 10px;
 
-    border: 1px solid #e5e7eb;
-
-    border-radius: 14px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
-
-
-/* =========================
-   TITLE
-========================= */
 
 .register-card h1 {
     text-align: center;
+    margin-bottom: 25px;
 
-    font-size: 26px;
-
-    color: #111827;
-
-    margin-bottom: 30px;
+    font-size: 28px;
+    color: #172033;
 }
 
-
-/* =========================
-   FORM
-========================= */
-
-.register-card form {
+#register-form {
     display: flex;
-
     flex-direction: column;
-
     gap: 10px;
 }
 
+#register-form input {
+    padding: 12px;
 
-/* =========================
-   INPUTS
-========================= */
-
-.register-card input {
-    width: 100%;
-
-    padding: 13px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 
     font-size: 15px;
-
-    color: #111827;
-
-    background-color: #ffffff;
-
-    border: 1px solid #d1d5db;
-
-    border-radius: 8px;
-
     outline: none;
-
-    transition: 0.2s;
 }
 
 
-.register-card input::placeholder {
-    color: #9ca3af;
-}
+#register-form div {
+    min-height: 18px;
 
-
-.register-card input:focus {
-    border-color: #2563eb;
-
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-
-/* =========================
-   ERRORS
-========================= */
-
-.register-card form div {
-    min-height: 16px;
-
-    color: #dc2626;
-
+    color: #d92d20;
     font-size: 13px;
 }
 
-
-/* =========================
-   BUTTON
-========================= */
-
-.register-card button {
-    width: 100%;
+#register-form button {
+        margin-top: 5px;
 
     padding: 13px;
 
-    margin-top: 5px;
-
     border: none;
-
     border-radius: 8px;
 
-    background-color: #2563eb;
-
-    color: #ffffff;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-
-.register-card button:hover {
     background-color: #1d4ed8;
+    color: white;
 
-    transform: translateY(-1px);
-}
-
-
-/* =========================
-   LOGIN TEXT
-========================= */
-
-.register-card p {
-    text-align: center;
-
-    margin-top: 10px;
-
-    color: #6b7280;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================
-   LOGIN LINK
-========================= */
-
-.register-card p a {
-    color: #2563eb;
-
-    text-decoration: none;
-
+    font-size: 16px;
     font-weight: 600;
-}
-
-
-.register-card p a:hover {
-    text-decoration: underline;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 500px) {
-
-    .register-page {
-        padding: 20px;
-    }
-
-    .register-card {
-        padding: 25px;
-    }
-
-    .register-card h1 {
-        font-size: 22px;
-    }
 
 }

@@ -84,7 +84,7 @@ function handleRegister(event) {
         form.querySelector("#confirm-password-error");
 
 
-    // Effacer les anciennes erreurs
+    
 
     nameError.innerHTML = "";
     emailError.innerHTML = "";
@@ -95,7 +95,7 @@ function handleRegister(event) {
     let isValid = true;
 
 
-    // Validation du nom
+   
 
     if (name === "" || name.length < 5) {
 
@@ -105,8 +105,7 @@ function handleRegister(event) {
     }
 
 
-    // Validation de l'email
-
+   
     if (email === "" || !email.includes("@")) {
 
         emailError.innerHTML = "Entre un vrai email";
@@ -115,7 +114,7 @@ function handleRegister(event) {
     }
 
 
-    // Validation du mot de passe
+    
 
     if (password === "" || password.length < 8) {
 
@@ -126,7 +125,7 @@ function handleRegister(event) {
     }
 
 
-    // Confirmation du mot de passe
+   
 
     if (confirmPassword !== password) {
 
@@ -137,7 +136,7 @@ function handleRegister(event) {
     }
 
 
-    // Si tout est valide
+    
 
     if (isValid) {
 
@@ -145,7 +144,6 @@ function handleRegister(event) {
             JSON.parse(localStorage.getItem("users")) || [];
 
 
-        // Vérifier si l'email existe déjà
 
         const existingUser = users.find(
             user => user.email === email
@@ -161,7 +159,6 @@ function handleRegister(event) {
         }
 
 
-        // Créer le nouvel utilisateur
 
         const user = {
             name: name,
@@ -170,12 +167,10 @@ function handleRegister(event) {
         };
 
 
-        // Ajouter le user dans le tableau
 
         users.push(user);
 
 
-        // Sauvegarder dans LocalStorage
 
         localStorage.setItem(
             "users",

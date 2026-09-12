@@ -1,7 +1,8 @@
 import "../styles/profile.css";
-import "../components/Sidebar.js";
+import { Sidebar } from "../components/Sidebar.js";
 
 export function Profile() {
+
     const currentUser = JSON.parse(
         localStorage.getItem("currentUser")
     );
@@ -13,35 +14,41 @@ export function Profile() {
     }
 
     return `
-
-     
         <div class="profile-page">
-            
-            <h1>Mon profil</h1>
-${Sidebar()}
-            <form id="profile-form">
 
-                <label>Nom</label>
-                <input
-                    type="text"
-                    id="name"
-                    value="${currentUser.name}"
-                >
+            ${Sidebar()}
 
-                <label>Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    value="${currentUser.email}"
-                >
+            <main class="profile-content">
 
-                <button type="submit">
-                    Enregistrer
-                </button>
+                <h1>Mon profil</h1>
 
-                <p id="profile-message"></p>
+                <form id="profile-form">
 
-            </form>
+                    <label>Nom</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        value="${currentUser.name}"
+                    >
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        value="${currentUser.email}"
+                    >
+
+                    <button type="submit">
+                        Enregistrer
+                    </button>
+
+                    <p id="profile-message"></p>
+
+                </form>
+
+            </main>
 
         </div>
     `;
@@ -50,6 +57,8 @@ ${Sidebar()}
 export function initProfile() {
 
     const form = document.getElementById("profile-form");
+
+    if (!form) return;
 
     form.addEventListener("submit", (event) => {
 

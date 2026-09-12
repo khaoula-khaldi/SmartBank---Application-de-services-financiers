@@ -1,3 +1,4 @@
+import "../styles/sidebar.css";
 
 export function Sidebar() {
     return `
